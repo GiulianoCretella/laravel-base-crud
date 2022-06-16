@@ -6,11 +6,12 @@
 <div class="container">
     <div class="row">
         @foreach ($comics as $comic)
-        <div class="col">
+        <div class="col-4">
             <a href="{{route('comics.show',$comic->id)}}">
                 <div class="card">
-                    <img src="{{$comic->thumb}}" alt="">
+                    <img class="img-fluid" src="{{$comic->thumb}}" alt="">
                     <h6>{{$comic->title}}</h6>
+                    <a href="{{route('comics.show',$comic->id)}}" class="btn btn-primary">Visualizza</a>
                 </div>
             </a>
         </div>
