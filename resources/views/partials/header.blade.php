@@ -6,7 +6,7 @@
               Dc Comics
             </a>
             <a class="nav-item nav-link" href="/comics">Comics</a>
-            <a class="nav-item nav-link" href="/comics/create">Comic</a>
+            <a class="nav-item nav-link" href="/comics/create">Create Comic</a>
           </nav>
     </div>
 </header>
