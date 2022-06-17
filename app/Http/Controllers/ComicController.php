@@ -7,6 +7,13 @@ use App\Comic;
 
 class ComicController extends Controller
 {
+    protected $validationRule = [
+        'title'=> 'required|max:50',
+        'type'=> 'required|max:30',
+        'thumb'=> 'required|max:255',
+        'price'=> 'numeric',
+        'sale_date' => 'required'
+    ];
     /**
      * Display a listing of the resource.
      *
@@ -36,6 +43,7 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate($this->validationRule);
         $data = $request->all();
         dump($data);
         $newComic= new Comic();
@@ -76,6 +84,7 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate($this->validationRule);
         $data= $request->all();
         $comic = Comic::findOrFail($id);
         $comic->update($data);
